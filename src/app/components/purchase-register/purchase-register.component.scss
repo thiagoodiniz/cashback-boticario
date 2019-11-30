@@ -1,0 +1,20 @@
+
+
+
+.purchase{
+    width: 25rem;
+    &__form {
+        display: flex;
+        flex-direction: column;
+        margin: 0 15px;
+    }
+
+    &__actions {
+        &--save-btn {
+            color: #fff;
+            background-color: #5bcc71;
+            font-weight: unset;
+            margin: 0 0 20px 20px !important;
+        }
+    }
+}
