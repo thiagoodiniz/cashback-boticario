@@ -1,4 +1,3 @@
-import { getUniqueID } from 'src/helpers/code-generator.helper';
 import { CashBack } from './cashback.model';
 
 export enum EPurchaseStatus {
@@ -15,20 +14,41 @@ export class Purchase {
         private _value: number,
         private _date: Date,
         private _idUser: string,
-        private _id: string = getUniqueID(10),
         private _status: EPurchaseStatus = EPurchaseStatus.inValidation,
+        private _id?: string,
     ){ }
+
+    static getNew(): Purchase{
+        return new Purchase(
+            '',
+            undefined,
+            new Date(),
+            undefined,
+        );
+    }
 
     get code(): string {
         return this._code;
+    }
+
+    set code(code: string) {
+        this._code = code;
     }
 
     get value(): number {
         return this._value;
     }
 
+    set value(value: number) {
+        this._value = value;
+    }
+
     get date(): Date {
         return this._date;
+    }
+
+    set date(date: Date) {
+        this._date = date;
     }
 
     set cashBack(cashBack: CashBack) {

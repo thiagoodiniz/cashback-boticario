@@ -1,12 +1,10 @@
-import { getUniqueID } from 'src/helpers/code-generator.helper';
-
 export class User {
     constructor(
         private _name: string,
         private _cpf: string,
         private _email: string,
         private _password: string,
-        private _id: string = getUniqueID(10),
+        private _id?: string,
     ){ }
 
     get name(): string{

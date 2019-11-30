@@ -1,10 +1,8 @@
-import { getUniqueID } from 'src/helpers/code-generator.helper';
-
 export class CashBack {
     constructor(
         private _percentage: number,
         private _value: number,
-        private _id: string = getUniqueID(10),
+        private _id?: string,
         ){ }
 
         get percentage(): number {
