@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Purchase } from 'src/core/purchase.model';
+import { Purchase, EPurchaseStatus } from 'src/core/purchase.model';
 import { PurchaseService } from 'src/app/services/purchase.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -19,7 +19,12 @@ export class PurchaseRegisterComponent implements OnInit {
 		private formBuilder: FormBuilder,
 		private router: Router,
 	) { 
-		this._purchase = Purchase.getNew();
+		this._purchase = {
+			code: undefined,
+			value: undefined,
+			date: new Date(),
+			status: EPurchaseStatus.inValidation,
+		}
 	}
 
 	ngOnInit() {
@@ -37,7 +42,7 @@ export class PurchaseRegisterComponent implements OnInit {
 
 		this.purchaseSvc.savePurchase(this._purchase).subscribe(id => {
 			console.log('id:', id);
-			this.router.navigateByUrl('');
+			this.router.navigateByUrl('purchase/list');
 		});
 	}
 

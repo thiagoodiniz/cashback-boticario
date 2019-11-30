@@ -6,16 +6,18 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { PurchaseRegisterComponent } from './components/purchase-register/purchase-register.component';
-import { MaterialModule } from './material.module';
+import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MAT_DATE_LOCALE} from '@angular/material';
+import { PurchaseListComponent } from './components/purchase-list/purchase-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     PurchaseRegisterComponent,
+    PurchaseListComponent,
   ],
   imports: [
     BrowserModule,
