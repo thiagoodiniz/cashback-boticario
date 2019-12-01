@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { User } from 'src/core/user.model';
+import { Router } from '@angular/router';
+import { routeConstant } from 'src/app/services/services-constants';
 
 @Component({
 	selector: 'app-header',
@@ -12,6 +14,7 @@ export class HeaderComponent implements OnInit {
 
 	constructor(
 		private loginSvc: LoginService,
+		private router: Router,
 	) { }
 
 	ngOnInit() {
@@ -23,6 +26,10 @@ export class HeaderComponent implements OnInit {
 
 	logout(): void {
 		this.loginSvc.logOut();
+	}
+
+	systemInfo(): void {
+		this.router.navigateByUrl(routeConstant.systemInfo);
 	}
 
 

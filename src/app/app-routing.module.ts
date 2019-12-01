@@ -6,6 +6,7 @@ import { LoginComponent } from './security/login/login.component';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
 import { routeConstant } from './services/services-constants';
 import { LoggedInGuard } from './security/loggedin.guard';
+import { SystemInfoComponent } from './components/system-info/system-info.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,11 @@ const routes: Routes = [
   {
     path: routeConstant.purchase.edit,
     component: PurchaseRegisterComponent,
+    canActivate: [LoggedInGuard],
+  },
+  {
+    path: routeConstant.systemInfo,
+    component: SystemInfoComponent,
     canActivate: [LoggedInGuard],
   },
 

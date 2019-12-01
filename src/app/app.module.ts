@@ -14,6 +14,7 @@ import { PurchaseListComponent } from './components/purchase-list/purchase-list.
 import { LoginComponent } from './security/login/login.component';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
 import { NgxCurrencyModule } from "ngx-currency";
+import { SystemInfoComponent } from './components/system-info/system-info.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NgxCurrencyModule } from "ngx-currency";
     PurchaseListComponent,
     LoginComponent,
     UserRegisterComponent,
+    SystemInfoComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,30 @@
+.header-image {
+    background-image: url('../../../assets/thiagodiniz.jpg');
+    background-size: cover;
+}
+
+.system-info {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+
+.linkedin {
+    background: url('../../../assets/linkedin-logo.svg') no-repeat top left;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px;
+    height: 40px;
+    width: 40px;
+}
+
+.github {
+    background: url('../../../assets/github-logo.svg') no-repeat top left;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px;
+    height: 40px;
+    width: 40px;
+}

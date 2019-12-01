@@ -9,6 +9,7 @@ export const httpOptions = {
 export const routeConstant = {
     login: 'login',
     userRegister: 'register',
+    systemInfo: 'system-info',
     purchase: {
         list: 'purchase/list',
         create: 'purchase/create',

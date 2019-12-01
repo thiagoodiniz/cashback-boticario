@@ -6,6 +6,7 @@
             <li *ngIf="loggedUser" class="user-li" routerLinkActive="active">
                 <a [matMenuTriggerFor]="menu">{{loggedUser.name}}</a>
                 <mat-menu #menu="matMenu">
+                    <button (click)="systemInfo()" mat-menu-item>Informações do Sistema</button>
                     <button (click)="logout()" mat-menu-item>Sair</button>
                 </mat-menu>
             </li>            
