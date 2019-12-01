@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MAT_DATE_LOCALE} from '@angular/material';
 import { PurchaseListComponent } from './components/purchase-list/purchase-list.component';
+import { LoginComponent } from './login/login.component';
+import { UserRegisterComponent } from './user-register/user-register.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { PurchaseListComponent } from './components/purchase-list/purchase-list.
     HeaderComponent,
     PurchaseRegisterComponent,
     PurchaseListComponent,
+    LoginComponent,
+    UserRegisterComponent,
   ],
   imports: [
     BrowserModule,
