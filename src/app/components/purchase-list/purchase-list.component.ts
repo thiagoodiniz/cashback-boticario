@@ -24,7 +24,7 @@ export class PurchaseListComponent implements OnInit {
 	}
 
 	getDateFormated(date: Date): string {
-		return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+		return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
 	}
 
 	goToEditPurchase(): void {
