@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: routeConstant.purchase.create,
     component: PurchaseRegisterComponent,
+  },
+  {
+    path: routeConstant.purchase.edit,
+    component: PurchaseRegisterComponent,
   }
 ];
 

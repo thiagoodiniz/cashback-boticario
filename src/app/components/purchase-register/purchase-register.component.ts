@@ -13,17 +13,24 @@ export class PurchaseRegisterComponent implements OnInit {
 
 	private _purchase: Purchase;
 
+	private editing: boolean = true;
+
 	purchaseForm: FormGroup;
 	constructor(
 		private purchaseSvc: PurchaseService,
 		private formBuilder: FormBuilder,
 		private router: Router,
 	) { 
-		this._purchase = {
-			code: undefined,
-			value: undefined,
-			date: new Date(),
-			status: EPurchaseStatus.inValidation,
+		this._purchase = this.purchaseSvc.selectedPurchase;
+
+		if(!this._purchase){
+			this.editing = false;
+			this._purchase = {
+				code: undefined,
+				value: undefined,
+				date: new Date(),
+				status: EPurchaseStatus.inValidation,
+			}
 		}
 	}
 
@@ -39,8 +46,7 @@ export class PurchaseRegisterComponent implements OnInit {
 		this._purchase.code = this.purchaseForm.get('code').value;
 		this._purchase.value = this.purchaseForm.get('value').value;
 		this._purchase.date = this.purchaseForm.get('date').value;
-
-		this.purchaseSvc.savePurchase(this._purchase).subscribe(id => {
+		this.purchaseSvc.savePurchase(this._purchase, this.editing).subscribe(id => {
 			console.log('id:', id);
 			this.router.navigateByUrl('purchase/list');
 		});

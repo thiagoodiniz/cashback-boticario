@@ -12,7 +12,7 @@ export class PurchaseListComponent implements OnInit {
 
 	purchaseList: Purchase[];
 
-	displayedColumns = ['code', 'value', 'date'];
+	displayedColumns = ['code', 'value', 'date', 'actions'];
 
 	constructor(
 		private purchaseSvc: PurchaseService,
@@ -27,8 +27,8 @@ export class PurchaseListComponent implements OnInit {
 		return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
 	}
 
-	goToEditPurchase(): void {
-
+	goToEditPurchase(purchase: Purchase): void {
+		this.purchaseSvc.goToEdit(purchase);
 	}
 
 	loadPuchaces(): void {
