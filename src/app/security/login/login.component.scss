@@ -1,0 +1,28 @@
+
+.login{
+    max-width: 80%;
+    margin: 0 auto;
+    &__form {
+        display: flex;
+        flex-direction: column;
+        margin: 0 15px;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: space-evenly;
+
+        &--btn-register {
+            width: 45%;
+            color: #fff;
+            background-color: #509aef;
+            font-weight: unset;
+        }
+        &--btn-login {
+            width: 45%;
+            color: #fff;
+            background-color: #5bcc71;
+            font-weight: unset;
+        }
+    }
+}
