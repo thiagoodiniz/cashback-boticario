@@ -34,5 +34,9 @@ ul {
 
     & > .user-li {
         margin-left: auto;
+
+        & > a {
+            cursor: pointer;
+        }
     }
 }

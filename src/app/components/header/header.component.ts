@@ -21,5 +21,9 @@ export class HeaderComponent implements OnInit {
 		return this.loginSvc.loggedUser;
 	}
 
+	logout(): void {
+		this.loginSvc.logOut();
+	}
+
 
 }

@@ -3,7 +3,12 @@
         <ul>
             <li routerLinkActive="active"><a [routerLink]="['/purchase/list']">Lista de Compras</a></li>
             <li routerLinkActive="active"><a [routerLink]="['/purchase/create']">Cadastro de Compra</a></li>
-            <li *ngIf="loggedUser" class="user-li" routerLinkActive="active"><a>{{loggedUser.name}}</a></li>            
+            <li *ngIf="loggedUser" class="user-li" routerLinkActive="active">
+                <a [matMenuTriggerFor]="menu">{{loggedUser.name}}</a>
+                <mat-menu #menu="matMenu">
+                    <button (click)="logout()" mat-menu-item>Sair</button>
+                </mat-menu>
+            </li>            
         </ul>
     </nav>
 </header>

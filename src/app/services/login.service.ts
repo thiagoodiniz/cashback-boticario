@@ -51,7 +51,7 @@ export class LoginService {
 
 	logOut(): void {
 		this.user = undefined;
-		this.router.navigateByUrl('');
+		this.router.navigateByUrl(routeConstant.login);
 	}
 	
 }
