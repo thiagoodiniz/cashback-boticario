@@ -1,0 +1,34 @@
+<section>
+    <mat-card class="user-register">
+        <mat-card-header>
+            <mat-card-title>Inscreva-se</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="userRegistrationForm" class="user-register__form" novalidate>
+                <mat-form-field>
+                    <input matInput placeholder="Nome completo" formControlName="name">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="CPF" formControlName="cpf">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="E-mail" formControlName="email">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Senha" type="password" formControlName="password">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Confirmar Senha" type="password" formControlName="confirmPassword" >
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+    
+        <mat-card-actions class="user-register__actions">
+            <button (click)="register()" [disabled]="userRegistrationForm.invalid" class="user-register__actions--btn" mat-raised-button>Cadastrar</button>
+        </mat-card-actions>
+    </mat-card>
+</section>
