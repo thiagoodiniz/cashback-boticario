@@ -37,7 +37,7 @@ export class PurchaseRegisterComponent implements OnInit {
 	ngOnInit() {
 		this.purchaseForm = this.formBuilder.group({
 			code: this.formBuilder.control(this._purchase.code, [Validators.required]),
-			value: this.formBuilder.control(this._purchase.value, [Validators.required, Validators.pattern(/^[0-9]*$/)]),
+			value: this.formBuilder.control(this._purchase.value, [Validators.required]),
 			date: this.formBuilder.control(this._purchase.date, [Validators.required]),
 		})
 	}

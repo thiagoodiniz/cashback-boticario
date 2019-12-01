@@ -13,6 +13,7 @@ import {MAT_DATE_LOCALE} from '@angular/material';
 import { PurchaseListComponent } from './components/purchase-list/purchase-list.component';
 import { LoginComponent } from './security/login/login.component';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
+import { NgxCurrencyModule } from "ngx-currency";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { UserRegisterComponent } from './components/user-register/user-register.
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxCurrencyModule,
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-br' }],
   bootstrap: [AppComponent]
