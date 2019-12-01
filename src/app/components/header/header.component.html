@@ -3,7 +3,7 @@
         <ul>
             <li routerLinkActive="active"><a [routerLink]="['/purchase/list']">Lista de Compras</a></li>
             <li routerLinkActive="active"><a [routerLink]="['/purchase/create']">Cadastro de Compra</a></li>
-            <li class="user-li" routerLinkActive="active"><a [routerLink]="['']">Thiago Diniz</a></li>
+            <li *ngIf="loggedUser" class="user-li" routerLinkActive="active"><a>{{loggedUser.name}}</a></li>            
         </ul>
     </nav>
 </header>
