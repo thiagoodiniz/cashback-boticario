@@ -4,7 +4,7 @@
         <mat-card-title>Compras Cadastradas</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <table class="purchase-list-container__table" mat-table [dataSource]="purchaseList">
+        <table #purchaseTable class="purchase-list-container__table" mat-table [dataSource]="purchaseList">
             <ng-container matColumnDef="code">
                 <th mat-header-cell *matHeaderCellDef> Código Produto </th>
                 <td mat-cell *matCellDef="let element"> {{element.code}} </td>
@@ -26,7 +26,7 @@
                     <button (click)="goToEditPurchase(element)" class="actions__btn">
                         <mat-icon>edit</mat-icon> 
                     </button>
-                    <button class="actions__btn actions__btn--remove">
+                    <button (click)="removePurchase(element.id)" class="actions__btn actions__btn--remove">
                         <mat-icon>close</mat-icon> 
                     </button>
                 </td>

@@ -56,6 +56,10 @@ export class PurchaseService {
 
 	}
 
+	removePurchase(purchaseID: string): Observable<any> {
+		return this.http.delete(`${environment.api}/purchases/${purchaseID}`, { responseType: 'text' });
+	}
+
 	loadPurchase(): Observable<Array<Purchase>> {
 		return this.http.get(`${environment.api}/purchases`, httpOptions)
 			.pipe(

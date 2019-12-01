@@ -31,6 +31,12 @@ export class PurchaseListComponent implements OnInit {
 		this.purchaseSvc.goToEdit(purchase);
 	}
 
+	removePurchase(purchaseID: string): void {
+		this.purchaseSvc.removePurchase(purchaseID).subscribe(() => {
+			this.loadPuchaces();
+		})
+	}
+
 	loadPuchaces(): void {
 		this.purchaseSvc.loadPurchase().subscribe((purchaseList) => {
 			this.purchaseList = purchaseList;
