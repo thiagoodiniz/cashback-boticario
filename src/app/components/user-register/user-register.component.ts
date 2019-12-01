@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from 'src/core/user.model';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
+import { routeConstant } from 'src/app/services/services-constants';
 
 @Component({
 	selector: 'app-user-register',
@@ -10,9 +13,12 @@ import { User } from 'src/core/user.model';
 export class UserRegisterComponent implements OnInit {
 
 	userRegistrationForm: FormGroup;
+	private editing: boolean = false;
 
 	constructor(
 		private formBuilder: FormBuilder,
+		private userSvc: UserService,
+		private router: Router,
 	) { }
 
 	ngOnInit() {
@@ -33,8 +39,9 @@ export class UserRegisterComponent implements OnInit {
 			password: this.userRegistrationForm.get('password').value,
 		}
 
-		console.log('Save use:', user);
-		//
+		this.userSvc.saveUser(user, this.editing).subscribe(() => {
+			this.router.navigateByUrl(routeConstant.login);
+		});
 	}
 
 }
