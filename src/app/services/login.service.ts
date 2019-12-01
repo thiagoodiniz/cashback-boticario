@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from "rxjs/operators";
-import { httpOptions } from './services-constants';
+import { httpOptions, routeConstant } from './services-constants';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -19,14 +19,14 @@ export class LoginService {
 		private http: HttpClient,
 		private router: Router,
 	) { 
-		this.getAllUsers().subscribe((users: User[]) => this.allUsers = users);
+		this.loadAllUsers().subscribe();
 	}
 
-	private getAllUsers(): Observable<User[]> {
+	loadAllUsers(): Observable<void> {
 		return this.http.get(`${environment.api}/users`, httpOptions)
 		.pipe(
 			map((res: User[]) => {
-				return res;
+				this.allUsers = res;
 			})
 		);
 	}

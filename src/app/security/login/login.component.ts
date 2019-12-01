@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 		const email = this.loginForm.get('user').value;
 		const password = this.loginForm.get('password').value;
 		if(this.loginSvc.login(email, password)){
-			this.router.navigateByUrl('HOME')
+			this.router.navigateByUrl(routeConstant.purchase.list);
 		} else {
 			this.loginError = true;
 		}
