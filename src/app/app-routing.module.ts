@@ -2,19 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PurchaseRegisterComponent } from './components/purchase-register/purchase-register.component';
 import { PurchaseListComponent } from './components/purchase-list/purchase-list.component';
-import { LoginComponent } from './login/login.component';
-import { UserRegisterComponent } from './user-register/user-register.component';
-
-export const routeConstant = {
-  login: 'login',
-  userRegister: 'register',
-  purchase: {
-      list: 'purchase/list',
-      create: 'purchase/create',
-      edit: 'purchase/edit/:idPurchase',
-      routeParam: ':idPurchase',
-  },
-}
+import { LoginComponent } from './security/login/login.component';
+import { UserRegisterComponent } from './components/user-register/user-register.component';
+import { routeConstant } from './services/services-constants';
+import { LoggedInGuard } from './security/loggedin.guard';
 
 const routes: Routes = [
   {
@@ -28,14 +19,17 @@ const routes: Routes = [
   {
     path: routeConstant.purchase.list,
     component: PurchaseListComponent,
+    canActivate: [LoggedInGuard],
   },
   {
     path: routeConstant.purchase.create,
     component: PurchaseRegisterComponent,
+    canActivate: [LoggedInGuard],
   },
   {
     path: routeConstant.purchase.edit,
     component: PurchaseRegisterComponent,
+    canActivate: [LoggedInGuard],
   },
 
 ];

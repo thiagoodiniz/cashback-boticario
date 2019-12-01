@@ -1,17 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Purchase } from 'src/core/purchase.model';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
 import { Router } from '@angular/router';
-import { routeConstant } from '../app-routing.module';
-
-const httpOptions = {
-	headers: new HttpHeaders({
-		'Content-Type': 'application/json',
-	})
-};
+import { httpOptions, routeConstant } from './services-constants';
 
 @Injectable({
 	providedIn: 'root'
@@ -68,5 +62,5 @@ export class PurchaseService {
 					return res;
 				})
 			);
-		}
+	}
 }
