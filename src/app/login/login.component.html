@@ -1,0 +1,22 @@
+<section>
+    <mat-card class="login">
+        <mat-card-header>
+            <mat-card-title>Acessar a sua conta</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="loginForm" class="login__form" novalidate>
+                <mat-form-field>
+                    <input matInput placeholder="E-mail" formControlName="user">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Senha" formControlName="password" type="password">
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+    
+        <mat-card-actions class="login__actions">
+            <button (click)="login()" [disabled]="loginForm.invalid" class="login__actions--btn" mat-raised-button>Entrar</button>
+        </mat-card-actions>
+    </mat-card>
+</section>
