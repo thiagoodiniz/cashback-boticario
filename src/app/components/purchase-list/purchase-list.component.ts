@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { PurchaseService } from 'src/app/services/purchase.service';
-import { Purchase } from 'src/core/purchase.model';
+import { Purchase, EPurchaseStatus } from 'src/core/purchase.model';
 
 @Component({
 	changeDetection: ChangeDetectionStrategy.OnPush,
@@ -12,7 +12,7 @@ export class PurchaseListComponent implements OnInit {
 
 	purchaseList: Purchase[];
 
-	displayedColumns = ['code', 'value', 'date', 'actions'];
+	displayedColumns = ['code', 'value', 'date', 'status', 'actions'];
 
 	constructor(
 		private purchaseSvc: PurchaseService,
@@ -21,6 +21,10 @@ export class PurchaseListComponent implements OnInit {
 
 	ngOnInit() {
 		this.loadPuchaces();
+	}
+
+	canShowActions(purchase: Purchase): boolean {
+		return purchase.status === EPurchaseStatus.inValidation;
 	}
 
 	getDateFormated(date: Date): string {
