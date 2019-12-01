@@ -1,0 +1,19 @@
+
+.user-register{
+    max-width: 80%;
+    margin: 0 auto;
+    &__form {
+        display: flex;
+        flex-direction: column;
+        margin: 0 15px;
+    }
+
+    &__actions {
+        &--btn {
+            width: 100%;
+            color: #fff;
+            background-color: #5bcc71;
+            font-weight: unset;
+        }
+    }
+}
